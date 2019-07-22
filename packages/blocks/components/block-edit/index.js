@@ -30,17 +30,25 @@ import Field from '../field';
 import ServerSideRender from '../server-side-render';
 
 class BlockEdit extends Component {
-	/**
-	 * Local state.
-	 *
-	 * @type {Object}
-	 */
-	state = {
-		mode: 'edit',
-		currentTab: this.props.supportsTabs
-			? Object.keys( this.props.container.settings.tabs )[ 0 ]
-			: null
-	};
+	constructor( props ) {
+		super( props );
+
+		// edit mode
+		const { edit_mode: editMode } = props.container.settings;
+
+		/**
+		 * Local state.
+		 *
+		 * @type {Object}
+		 */
+		this.state = {
+			// mode: 'edit',
+			mode: editMode || 'preview',
+			currentTab: this.props.supportsTabs
+				? Object.keys( this.props.container.settings.tabs )[ 0 ]
+				: null
+		};
+	}
 
 	/**
 	 * Handles the change of the field's value.

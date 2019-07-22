@@ -230,6 +230,18 @@ class Block_Container extends Container {
 	}
 
 	/**
+	 * Set whether the block default edit mode is edit or preview.
+	 *
+	 * @param  boolean $preview
+	 * @return Block_Container
+	 */
+	public function set_initial_mode( $edit_mode = 'preview' ) {
+		$this->settings[ 'edit_mode' ] = $edit_mode;
+
+		return $this;
+	}
+
+	/**
 	 * Set the parent block(s) in which the block type can be inserted.
 	 *
 	 * @see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/#parent-optional
