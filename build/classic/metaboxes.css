@@ -41,6 +41,9 @@
 .postbox .cf-complex__inserter-item {
   font-weight: 600;
   color: #fff;
+  -webkit-transition: color 0.1s linear;
+  -o-transition: color 0.1s linear;
+  -moz-transition: color 0.1s linear;
   transition: color 0.1s linear; }
   .postbox .cf-complex__inserter-item:hover {
     color: #00a0d2; }
@@ -78,7 +81,11 @@
    Field
    ========================================================================== */
 .cf-container .cf-field {
-  flex: 1 1 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 100%;
+     -moz-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
   padding: 12px;
   border-width: 1px 1px 0 0;
   border-style: solid;
@@ -130,11 +137,13 @@
    ========================================================================== */
 .postbox .cf-multiselect__control {
   border-color: #ddd;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07) inset; }
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07) inset;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07) inset; }
 
 .postbox .cf-multiselect__control--is-focused,
 .postbox .cf-multiselect__control--is-focused:hover {
-  box-shadow: 0 0 2px rgba(0, 115, 170, 0.8); }
+  -webkit-box-shadow: 0 0 2px rgba(0, 115, 170, 0.8);
+          box-shadow: 0 0 2px rgba(0, 115, 170, 0.8); }
 
 /* ==========================================================================
    Colors
@@ -174,7 +183,9 @@
   max-height: 285px; }
 
 .cf-container-term-meta .cf-media-gallery__item {
-  flex-basis: 20%; }
+  -webkit-flex-basis: 20%;
+      -ms-flex-preferred-size: 20%;
+          flex-basis: 20%; }
 
 .postbox .cf-media-gallery__item-inner,
 .cf-container-term-meta .cf-media-gallery__item-inner {
@@ -214,7 +225,8 @@
    Radio
    ========================================================================== */
 .inside .cf-radio-image .cf-radio__input:focus ~ .cf-radio__label {
-  box-shadow: 0 0 2px rgba(0, 160, 210, 0.8); }
+  -webkit-box-shadow: 0 0 2px rgba(0, 160, 210, 0.8);
+          box-shadow: 0 0 2px rgba(0, 160, 210, 0.8); }
 
 .inside .cf-radio-image__image {
   border: 1px solid #b5bcc2; }
@@ -340,8 +352,14 @@
   margin: 0; }
 
 .cf-container__fields {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   margin: -1px -1px 0 0;
   background-color: #fff; }
   .cf-container__fields[hidden] {
@@ -363,19 +381,36 @@
   background-color: #fbfbfc; }
 
 .cf-container__tabs-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   margin: 0 0 -1px; }
 
 .cf-container__tabs-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 8px 12px;
   border: 1px solid #e2e4e7;
   margin: 0 8px 0 0;
   background-color: #fbfbfc;
   font-size: 12px;
   cursor: pointer;
+  -webkit-transition: background-color 0.1s linear, border-color 0.1s linear;
+  -o-transition: background-color 0.1s linear, border-color 0.1s linear;
+  -moz-transition: background-color 0.1s linear, border-color 0.1s linear;
   transition: background-color 0.1s linear, border-color 0.1s linear; }
   .cf-container__tabs-item:hover {
     background-color: #fff; }
